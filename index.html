@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Advanced Mini Site</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #1a1a1a, #333333);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+        }
+        header h1 {
+            font-size: 3em;
+            color: #ff0000;
+            margin-bottom: 10px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #ffd700;
+            animation: fadeIn 2s ease-in-out;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .btn {
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            margin: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #ffd700;
+            color: #000000;
+        }
+        .info-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            text-align: center;
+            margin-top: 15px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+            gap: 15px;
+            max-width: 100%;
+        }
+        .gallery img {
+            height: 150px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: #aaaaaa;
+            font-size: 0.9em;
+        }
+        @keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        @keyframes fadeInUp {
+            0% {opacity: 0; transform: translateY(30px);}
+            100% {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My Advanced Site</h1>
+    <p>Interactive, animated, and stylish!</p>
+</header>
+
+<main>
+    <div class="info-box" id="infoBox">
+        Click a button to see a message or change the page!
+    </div>
+
+    <button class="btn" onclick="showMessage()">Random Message</button>
+    <button class="btn" onclick="changeBackground()">Change Background</button>
+
+    <div class="gallery">
+        <img src="https://via.placeholder.com/250x150/ff0000/ffd700?text=Image+1" alt="Gallery Image 1">
+        <img src="https://via.placeholder.com/250x150/ff0000/ffd700?text=Image+2" alt="Gallery Image 2">
+        <img src="https://via.placeholder.com/250x150/ff0000/ffd700?text=Image+3" alt="Gallery Image 3">
+        <img src="https://via.placeholder.com/250x150/ff0000/ffd700?text=Image+4" alt="Gallery Image 4">
+    </div>
+</main>
+
+<footer>
+    &copy; 2025 My Advanced Mini Site
+</footer>
+
+<script>
+    const messages = [
+        "Hello! 👋 Welcome to my site!",
+        "Keep smiling! 😄",
+        "You're unique and awesome! 🌟",
+        "Coding is fun! 💻",
+        "Red Devils forever! 🔴"
+    ];
+
+    function showMessage() {
+        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        document.getElementById('infoBox').innerText = randomMessage;
+    }
+
+    function changeBackground() {
+        const colors = [
+            'linear-gradient(to bottom right, #1a1a1a, #333333)',
+            'linear-gradient(to bottom right, #330000, #990000)',
+            'linear-gradient(to bottom right, #111111, #ff0000)',
+            'linear-gradient(to bottom right, #660000, #ffcc00)'
+        ];
+        document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
+    }
+</script>
+
+</body>
+</html>
